@@ -4,6 +4,11 @@
 	Assignment: CIS155 project V3*/
 html{
 	background-color: lightblue;
+	/*
+	M2LO13 Demonstrate how CSS can change presentation of textual elements 
+	here i use the color: purple; to changge the color of the text rendered on 
+	the pages to purple 
+	*/
 	color: purple;
 	font-family: 'Kalam', cursive;
 	/* M4LO2 Demonstrate the use of background images (CSS)
@@ -11,7 +16,37 @@ html{
 	background-image: url(Background.png);
 	padding-left:100px;
 	padding-right:100px;
+	overflow: auto;
+	width: 100%;
+}	
+	/*
+		MEDIA STYLES 
+	*/
+	iframe{
+		box-shadow: pink 0px, 0px, 10px,10px;
+		border-style: dotted;
+	}
+		
+	
+/*
+	GRID DISPLAY
+*/
+
+/*
+	M3LO6 Demonstrate formatting a grid
+	here im formatting the grid to help my index page 
+	not look so cluttered 
+*/
+div.row{
+	clear:both;
 }
+div[class^="col-"]{
+	float: bottom;
+	
+}
+div.col-1-1 {width:(100%)}
+div.col-1-2 {width:(100%)}
+div.col-1-3 {width:(100%)}
 /*
 	NAVIGATION STYLES 
 */
@@ -35,6 +70,11 @@ nav > ul{
 nav > ul > li{
 	display: inline;
 	width: 15.5;
+	/*
+	M4LO4 Demonstrate the use of gradients
+	here i've used gradients to set the background to 
+	a pink to light blue gradient 
+	*/
 	background: linear-gradient(to top,lightblue,pink);
 	
 }
@@ -71,8 +111,26 @@ li{
 /*
 	BODY STYLES 
 */
+
+
+/*M2LO7 Demonstrate a CSS attribute selector other than class or id
+here i decided to use the a[href] to give all of my a elements containing 
+href attributes a gradient background of pink to light blue
+*/
+a[href]{
+	background: linear-gradient(to bottom, pink, lightblue);
+	
+}
+/*M2LO6  Demonstrate a CSS id and a CSS class selector
+here i use the .about on the paragraph to change the style of the paragraph
+on my about page */
+p.about{
+	background:linear-gradient(to bottom, white,lightblue);
+	color: #C9108F;
+}
 body> h1{
 	background: linear-gradient(to top, lightblue,pink);
+	
 }
 /*M4LO3 Demonstrate the use of rounded corners for borders (CSS)
 in my aside elements i have used the boarder- radius to set the edges of my 
@@ -83,9 +141,9 @@ to left so that it is displayed on the left side of the screen*/
 i also have the clear set to clearing both so that it stays left
 even though i have another element set to float left*/
 #aside {
-	border-style: box;
+	border-style: dashed;
 	border-radius: 30px 30px 30px 30px;
-	display: block;
+	display: grid;
 	color: black;
 	font-size: 0.8em;
 	text-align: center;
@@ -94,6 +152,7 @@ even though i have another element set to float left*/
 	width: 20%;
 	background: white;
 	box-shadow: pink 0px 0px 20px 10px;
+	position: relative;
 	/*M4LO3 Demonstrate the use of rounded corners for borders (CSS)
 	this box-shadow puts a pink shadow round my aside element*/
 }
@@ -105,9 +164,8 @@ here i use the # to select the aside2 element for the css */
 #aside2 {
 	border-style: box;
 	position: relative;
-	
 	border-radius: 30px,30px,30px,30px;
-	display: block;
+	display: grid;
 /*M2LO13 Demonstrate how CSS can change presentation of textual elements
 here I use the color font size and text align elements to change the font 
 color and size of the text within the aside*/	
@@ -119,6 +177,20 @@ color and size of the text within the aside*/
 	width: 20%;
 	background:white;
 	box-shadow: purple 0px 0px 20px 10px;
+	/*
+	M4LO5 Demonstrate the use of text or box shadowing here i have 
+	put a shadow around my aside elements
+	*/
+	-webkit-transition: width 6s; 
+	transition: width 6s;
+}
+/*
+	M8LO10 Demonstrate a CSS animation or transition
+	here i put a transition on my second aside element so when you 
+	hover over it, it grows
+*/
+#aside2:hover{
+	width: 600px;
 }
 /*M2LO5 Demonstrate contextual selectors
 here i use footer to select the footer element to apply 
@@ -130,11 +202,18 @@ footer{
 	clear: both; 
 	float: bottom;
 	display: block;
-	overflow: scroll;
+	overflow: auto;
+	position: static;
+	/*
+		M3LO9 Demonstrate fixed, static, or inherited positioning
+		here i've used static positioning so the footer is displayed 
+		as normal on the page 
+	*/
+	
 }
 /*M3LO10 Demonstrate an overflow setting 
-in my footer element i've set the overflow method to scroll 
-so in one of my elements overflows the space it is given a scroll element instead*/
+in my footer element i've set the overflow method to auto 
+so if one of my elements overflows the space it is given a scroll element instead*/
 body{
 	/*M2LO12 Demonstrate how CSS can change presentation of page elements
 	here i changed the background and the size of the body element */
@@ -142,32 +221,88 @@ body{
 	padding-left: 0px;
 	padding-right:0px;
 	box-shadow: purple 20px 5px 9px;
+	position: absolute;
+	/*M3LO8B Demonstrate absolute positioning
+here i have absolute positioning so its positioned reletive to the first element */
 	
+}
+/*M2LO11 Demonstrate a pseudo-classes and a pseudo-element selector
+i'ce used the :link to call the pseudo element to change the first letter of my 
+aside to being extra large and light blue */
+#aside::first-letter{
+	color: #1FFCF6;
+	font-size: x-large
 }
 /*
 	IMAGE STYLES
 */
 figure{
-transform: scale(0.90, 0.90) translate(-135px, -40px) scaleY(1.3);
+	/*
+	M4LO8 Demonstrate the use of transformations for 2D or 3D images 
+	here i've tried to scale my image down so its not quite so large
+	*/
+transform: scale(0.85, 0.85) translate(-135px, -40px) scaleY(1.3);
 }
 /*M4LO3 Demonstrate the use of rounded corners for borders (CSS)
 here i've used the trasform property on my cover image i've scaled it down to 
 90% its original size and moved it 135 pixwels to the right and 40 pixels down to make it
 fit better withing my body element and also scaled the y axis to stretch my image to fill the space*/
+
 /*M2LO6  Demonstrate a CSS id and a CSS class selector 
 here i use the class selcetor by putting a full stop before the name to 
 call the element */
 #figure2{
+	/*
+	M4LO6 Demonstrate the use of opacity/transparency for images
+	here i've changed the opacity of my panada so it isn't quite 
+	so distracting 
+	*/
 	opacity: 0.5;
 	filter: alpha(opacity=50);
+	float: left;
+	clear: right;
+	
+	
 }
+
+#figure3{
+
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	float: left;
+	clear: right;
+}
+#figure4{
+
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	float: left;
+	clear: right;
+}
+
 /*
 	MOBLIE STYLES: 0 to 480 pixels
 */
 /* M5LO3 Use media queries to format a page differently for phones vs. PCs. 
 This matches a screen device with a max width of 480 pixels*/
-@media only screen and (max-width: 480px){
+@media screen and (max-width: 480px){
+
+/*
+M5LO4 Use CSS for pull-down menus
+i tried to create a pull down menu here but something went wrong 
+and i am unsure what 
+*/
+	ul.homemenu{
+		display:none;
+	}
+	a.homemenuTitle:hover+ul.homemenu,ul.homemenu:hover{
+		display: block;
+	}
 	body{
+		/*
+			M3LO11 Demonstrate -prefix- style browser extensions use in CSS 
+			here i use the borwser extension to adapt for chrome 
+		*/
      display: -webkit-flex;
 	 display: flex;
 	 /*M5LO5 Demonstrate the use of flexboxes on a web page 
@@ -190,16 +325,31 @@ This matches a screen device with a max width of 480 pixels*/
 	 }
 	 #aside2{
 		order:100;
+		flex-basis: 0px;
+		flex-grow: 2;
 	 }
 	 
 	nav > ul{
+		
 		display: flex;
 		flex-flow: row wrap;
+		/*
+			M5LO6 Demonstrate use of properties of flexbox items
+			here i use the properties of flexbox items to help 
+			control how the page looks when switched to mobile
+		*/
+		flex-basis: 0px;
+		flex-grow: 2;
 	}
 }
 /*
 	TABLE STYLES
 */
+/*
+M2LO12 Demonstrate how CSS can change presentation of page elements 
+this area of my css changes the presentation of the table on my reviews page
+*/
+
 /*M6LO7 Demonstrate how to format a table with CSS 
 in this section of the css i've formated the table to have a 
 pink header and footer with black writting and make the body 
@@ -207,6 +357,10 @@ have a pink to blue gradient and all cells having a greenyellow
 outline though have no idea why there is a gap between my header
 and my body*/
 table.reviews thead{
+	/*
+	M2LO15 Apply colors using CSS: here im applying color both to the 
+	back ground which is pink and the text color which is black 
+	*/
 	background: pink;
 	color:black ;
 }
@@ -226,6 +380,7 @@ col#games{
 	width: 12%;
 }
 col.about {
+	
 	background: linear-gradient(to right, pink,DeepSkyBlue);
 	color: white;
 	

@@ -10,23 +10,32 @@
 	-->
 
 <head>
+	<meta charset = "utf-8"/>
 	<title> Panda Squishies Reviews</title>
 	<!-- M1LO9 Demonstrate the use of inline images
 		i've used the img tag here to create an inline image displayed at the top of the page 
 		with the logo i've created -->
-		
-	<meta charset = "utf-8"/>
 	<meta name"viewport" content="width=device-width, initial-scale=1"/>
 	<link href="styles.css" rel="stylesheet"/>
 	<!-- M1LO8 Demonstrate the use of external style sheets 
 		here is where i have created a link to an external style sheet that
 		is used to create to design of this document -->
-	<!-- M2LO4 Demonstrate external, embedded, and inline styles
-		here is the use of the embedded style with a link to a style sheet-->
+	
+	<style>
+		h4 {
+		color: #881DC9;
+		<!-- M2LO4 Demonstrate external, embedded, and inline styles
+		here is the use of the embedded style by putting the style directly into the html
+		i've changed the font of my h4 to a dark purple-->
+		}
+	</style>	
 </head>
 
 <body>
 	<header>
+	<!-- M4LO1 Demonstrate the use of figure boxes
+	here i've used figure boxes to contain my image 
+	-->
 		<figure>	
 			<img src="Cover.png" alt="Panda Squishies Reviews"/>
 		</figure>
@@ -37,7 +46,11 @@
 		 i've also used the li's to create an ordered list within the navigation
 		 -->
 	<nav>
-		<ul>
+	<!--M1LO13 site navigation: Here i used an ordered list to create links
+	to the other pages of my wedsite for site navigation
+		-->
+		<li><a href="#" class="homemenuTitle">Panda list &hearts;</a>
+		<ul class="homemenu">
 			<li><a href="index.html">Home</a></li>
 			<li><a href="about.html">About</a></li>
 			<li><a href="review.html">Reviews</a></li>
@@ -47,25 +60,61 @@
 	here i demonstrate the use of the inline styles to change the color and margin of
 	the h1 heading-->
 	<h2 style="color:blue;margin-left:30px;"> Highlights!</h2>
+	<!--M1LO13 targeted location : i used the id of the image on the review page to make
+	this image link jump straight to the review page 
+		-->
+		
+	<div class="col-1-1">	
+	<a href="review.html#GraveYard">
 	<img src="GraveYard.png" alt="Grave Yard Keeper"/>
+	</a>
+	<a href="review.html#Harvest">
+	<img src="Harvest2.png" alt="Harvest Moon"/>
+	</a>
+	<a href="review.html#Stardew">
+	<img src="Stardew2.jpg" alt="Stardew Valley"/>
+	</a>
+	</div>
+	<div class="col-1-2">
 	<div id="aside">
 		
-			<h2><strong> Currently playing!</strong></h2>
+			<h4><strong> Currently playing!</strong></h4>
 	
 			
 			
 			I'm curretnly playing the Graveyard Keeper! Have only played
-			for a couple of hours but am really enjoying it
+			for a couple of hours but am really enjoying it<br/> 
+			<br/>
+			I'm also playing Harvest Moon and Stardew Valley
+			<br/>
+			<br/>
+			<strong> To jump straight to the reviews of each game click the image</strong>
+			<br/>
 			
 	</div>
-	<div id="aside2">
-		<h3> <strong> About the game: </strong> </h3>
-		
-		In this game you are the mortician, The keeper of the graves</br>
-		and the preist in the local church while you try to figure </br>
-		out how to get back home with a not so helpful talking skull</br>
-		guiding you along the way
 	</div>
+	<div class="col-2-3">
+	<div id="aside2">
+	<!--M2LO4 inline styles: here i used inline styles to change the h1 heading to grey and center
+	aligned
+	-->
+		<h3 style="color: grey; text-align:center;"> About the game:</h3>
+		
+		In this game you are the mortician, The keeper of the graves<br/>
+		and the preist in the local church while you try to figure <br/>
+		out how to get back home with a not so helpful talking skull<br/>
+		guiding you along the way<br/>
+		
+		<strong>For more information on GraveYard Keeper click the controller icon</strong>
+		<!--M1LO13 external: Here i used an image to conatin a link to the graveyard keeper
+		website where you can learn more about the game and where to download
+		-->
+		<a href="https://www.graveyardkeeper.com/">
+		<img src="Controler.png" alt="GraveYard Keeper Site" >
+		</a>
+	</div>
+	</div>
+	
 	<footer>
 		<p>
 		 Thanks for visiting &hearts;
@@ -77,6 +126,12 @@
 <footer>
 	<div id="figure2">
 			<img src="Background.png" alt="footer"/>
+	</div>
+	<div id="figure3">
+			<img src="vrpanda.png" alt="footer"/>
+	</div>
+	<div id="figure4">
+			<img src="switchpanda.png" alt="footer"/>
 	</div>
 </footer>
 </html>
