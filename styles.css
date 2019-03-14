@@ -1,0 +1,238 @@
+@charset "utf-8";
+/*Name: Ashley Black
+	Date: February 24,2019
+	Assignment: CIS155 project V3*/
+html{
+	background-color: lightblue;
+	color: purple;
+	font-family: 'Kalam', cursive;
+	/* M4LO2 Demonstrate the use of background images (CSS)
+	here i have used the url of the image i want to be used as the background image*/
+	background-image: url(Background.png);
+	padding-left:100px;
+	padding-right:100px;
+}
+/*
+	NAVIGATION STYLES 
+*/
+/*M2LO3 Demonstrate style precedence and inheritance in CSS
+here is have 2 styles for the navigation the one that shows
+up last on the list is the one that is remembered first*/
+nav > ul{
+	
+	color: white;
+	display: block;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	/*M2LO15 Apply colors using CSS 
+	i used the background eleement here to set the
+	color of the navigation bar to grey*/
+	background: linear-gradient(to top,pink,lightblue);
+	width: 100%;
+	
+}
+nav > ul > li{
+	display: inline;
+	width: 15.5;
+	background: linear-gradient(to top,lightblue,pink);
+	
+}
+nav>ul>li>a:link, nav>ul>li>a:visited{
+	color: (151,151,151);
+	text-decoration: none;
+}
+/*M2LO11 Demonstrate a pseudo-classes and a pseudo-element selector
+i'ce used the :link to call the pseudo class of link to change the color of the unvistied link*/
+a:link {
+  color: #FF0000;
+}
+
+
+a:visited {
+  color: black;
+}
+
+
+a:hover {
+  color: #FF00FF;
+}
+
+
+a:active {
+  color: #0000FF;
+}
+
+
+li{
+	list-style: url(Controler.png);
+}
+
+/*
+	BODY STYLES 
+*/
+body> h1{
+	background: linear-gradient(to top, lightblue,pink);
+}
+/*M4LO3 Demonstrate the use of rounded corners for borders (CSS)
+in my aside elements i have used the boarder- radius to set the edges of my 
+box to be rounded */
+/* M3LO2 Demonstrate floating elements here I have my aside element float set 
+to left so that it is displayed on the left side of the screen*/
+/*M3LO3 Demonstrate a clearing floats 
+i also have the clear set to clearing both so that it stays left
+even though i have another element set to float left*/
+#aside {
+	border-style: box;
+	border-radius: 30px 30px 30px 30px;
+	display: block;
+	color: black;
+	font-size: 0.8em;
+	text-align: center;
+	float: left;
+	clear:both;
+	width: 20%;
+	background: white;
+	box-shadow: pink 0px 0px 20px 10px;
+	/*M4LO3 Demonstrate the use of rounded corners for borders (CSS)
+	this box-shadow puts a pink shadow round my aside element*/
+}
+/*M3LO8B Demonstrate relative positioning
+here i've used the relative positioning to set my second 
+aside element to sit next to the image*/
+/*M2LO6  Demonstrate a CSS id and a CSS class selector
+here i use the # to select the aside2 element for the css */
+#aside2 {
+	border-style: box;
+	position: relative;
+	
+	border-radius: 30px,30px,30px,30px;
+	display: block;
+/*M2LO13 Demonstrate how CSS can change presentation of textual elements
+here I use the color font size and text align elements to change the font 
+color and size of the text within the aside*/	
+	color: black;
+	font-size: 0.8em;
+	text-align:center;
+	float:bottom;
+	clear:bottom,left;
+	width: 20%;
+	background:white;
+	box-shadow: purple 0px 0px 20px 10px;
+}
+/*M2LO5 Demonstrate contextual selectors
+here i use footer to select the footer element to apply 
+style*/
+footer{
+	height: 100;
+	width: 100;
+	background: linear-gradient(to top,pink,lightblue);
+	clear: both; 
+	float: bottom;
+	display: block;
+	overflow: scroll;
+}
+/*M3LO10 Demonstrate an overflow setting 
+in my footer element i've set the overflow method to scroll 
+so in one of my elements overflows the space it is given a scroll element instead*/
+body{
+	/*M2LO12 Demonstrate how CSS can change presentation of page elements
+	here i changed the background and the size of the body element */
+	background-color: lightblue;
+	padding-left: 0px;
+	padding-right:0px;
+	box-shadow: purple 20px 5px 9px;
+	
+}
+/*
+	IMAGE STYLES
+*/
+figure{
+transform: scale(0.90, 0.90) translate(-135px, -40px) scaleY(1.3);
+}
+/*M4LO3 Demonstrate the use of rounded corners for borders (CSS)
+here i've used the trasform property on my cover image i've scaled it down to 
+90% its original size and moved it 135 pixwels to the right and 40 pixels down to make it
+fit better withing my body element and also scaled the y axis to stretch my image to fill the space*/
+/*M2LO6  Demonstrate a CSS id and a CSS class selector 
+here i use the class selcetor by putting a full stop before the name to 
+call the element */
+#figure2{
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+/*
+	MOBLIE STYLES: 0 to 480 pixels
+*/
+/* M5LO3 Use media queries to format a page differently for phones vs. PCs. 
+This matches a screen device with a max width of 480 pixels*/
+@media only screen and (max-width: 480px){
+	body{
+     display: -webkit-flex;
+	 display: flex;
+	 /*M5LO5 Demonstrate the use of flexboxes on a web page 
+	 here i used flex boxes to help display the page properly on 
+	 a narrower screen */
+	 -webkit-flex-flow: column;
+	 flex-flow: column;
+	 }
+	 
+	 header,footer{
+		 width:100%
+	 }
+	 /*M5LO7 Demonstrate use of properties of flexbox containers 
+	 here i used the flex order to hopefully prevent things from 
+	 overlaping one another in a narrower viewing port */
+	 #aside{
+		-webkit-flex: 1 1 150px;
+		flex:1 1 150px;
+		order:99;
+	 }
+	 #aside2{
+		order:100;
+	 }
+	 
+	nav > ul{
+		display: flex;
+		flex-flow: row wrap;
+	}
+}
+/*
+	TABLE STYLES
+*/
+/*M6LO7 Demonstrate how to format a table with CSS 
+in this section of the css i've formated the table to have a 
+pink header and footer with black writting and make the body 
+have a pink to blue gradient and all cells having a greenyellow 
+outline though have no idea why there is a gap between my header
+and my body*/
+table.reviews thead{
+	background: pink;
+	color:black ;
+}
+table.reviews tfoot{
+	background: pink;
+	color: black;
+}
+table.reviews thead tr{
+	height: 30px;
+}
+table.reviews tbody tr{
+	height: 90x;
+}
+col#games{
+	background: linear-gradient(to top, pink,DeepSkyBlue);
+	color: white;
+	width: 12%;
+}
+col.about {
+	background: linear-gradient(to right, pink,DeepSkyBlue);
+	color: white;
+	
+}
+
+table.reviews th, table.reviews td{
+	border: 2px solid GreenYellow ;
+	padding: 5px;
+	vertical-align: top;
+}
